@@ -1,6 +1,6 @@
 ## Gammin Market
 
-![alt text](hhttps://i.ibb.co/XX9mLBH/Captura-de-pantalla-de-2021-09-29-18-28-00.png)
+![alt text](https://i.ibb.co/XX9mLBH/Captura-de-pantalla-de-2021-09-29-18-28-00.png)
 
 
 ## Developped with Angular 🛠️
