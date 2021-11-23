@@ -1,0 +1,77 @@
+<mat-horizontal-stepper>
+  <mat-step>
+    <ng-template matStepLabel>Sus productos</ng-template>
+    <div *ngIf="(products$ | async) as products">
+        <div *ngIf="products.length === 0" class="message-style">
+          <p>No hay productos agregados!</p>
+          <a class="button" mat-button routerLink="/products" routerLinkActive="active"
+          >Agregar Productos</a>
+        </div>
+        <div class="row" *ngFor="let product of products">
+          <div class="col-xs-12 col-sm-2 col-md-2">
+            <div class="box">
+              <img class="image" [src]="product.image" alt="">
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-5 col-md-5">
+            <div class="box">
+              <p> ${{ product.price }} </p>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Datos personales</ng-template>
+    <div class="main-form-container">
+      <div class="form-container">
+      <div id="after_submit"></div>
+      <form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+        <div class="row">
+          <div class="col">
+              <label class="required" for="name">Name:</label><br />
+              <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+              <span id="name_validation" class="error_message"></span>
+          </div>
+          <div class="col">
+              <label class="required" for="name">Last Name:</label><br />
+              <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+              <span id="name_validation" class="error_message"></span>
+          </div>
+        </div>
+          <div class="row">   
+          <div class="col">
+                  <label class="required" for="email">Email:</label><br />
+                  <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+                  <span id="email_validation" class="error_message"></span>
+          </div>
+          <div class="col">
+              <label class="required" for="email">Phone:</label><br />
+              <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+              <span id="email_validation" class="error_message"></span>
+          </div>
+        </div>
+        <div class="row">
+          <label class="required" for="email">Adress:</label><br />
+          <input id="email" class="input-width" name="email" type="text" value="" size="30" /><br />
+          <span id="email_validation" class="error_message"></span>
+        </div>          
+          <input class="button-submit" id="submit_button" type="submit" value="Save" />
+      </form>
+      </div>
+      </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Pago</ng-template>
+    <div class="pago">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="Q4BQHC7NDKD3J">
+      <input type="image" src="https://www.paypalobjects.com/en_US/FR/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+      </form>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+
